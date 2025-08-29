@@ -1,0 +1,153 @@
+{
+  "name": "Neurai JSON-RPC API",
+  "version": "1.0.0",
+  "namespace": "bip122:00000044d33c0c0ba019be5c02497304",
+  "methods": {
+    "neurai_getAddresses": {
+      "description": "Return the list of available accounts in CAIP-10 format with their Neurai addresses.",
+      "params": [],
+      "returns": [
+        {
+          "caip10": "bip122:00000044d33c0c0ba019be5c02497304:RXNA...",
+          "address": "RXNA12345ExampleNeuraiAddress"
+        }
+      ],
+      "example": {
+        "request": { "method": "neurai_getAddresses", "params": [] },
+        "response": {
+          "result": [
+            {
+              "caip10": "bip122:00000044d33c0c0ba019be5c02497304:RXNA123...",
+              "address": "RXNA123..."
+            }
+          ]
+        }
+      }
+    },
+
+    "neurai_getUtxos": {
+      "description": "Return UTXOs for one or more Neurai addresses.",
+      "params": {
+        "addresses": ["RXNA123...", "RXNA456..."]
+      },
+      "returns": [
+        {
+          "txid": "abcd1234...",
+          "vout": 0,
+          "amount": 12.345,
+          "scriptPubKey": "76a914..."
+        }
+      ],
+      "example": {
+        "request": {
+          "method": "neurai_getUtxos",
+          "params": { "addresses": ["RXNA123..."] }
+        },
+        "response": {
+          "result": [
+            {
+              "txid": "abcd1234...",
+              "vout": 0,
+              "amount": 12.345,
+              "scriptPubKey": "76a914..."
+            }
+          ]
+        }
+      }
+    },
+
+    "neurai_signMessage": {
+      "description": "Sign an arbitrary message with the user’s private key.",
+      "params": {
+        "address": "RXNA123...",
+        "message": "Hello Neurai"
+      },
+      "returns": {
+        "signature": "base64signature..."
+      },
+      "example": {
+        "request": {
+          "method": "neurai_signMessage",
+          "params": {
+            "address": "RXNA123...",
+            "message": "Hello Neurai"
+          }
+        },
+        "response": {
+          "result": {
+            "signature": "base64signature..."
+          }
+        }
+      }
+    },
+
+    "neurai_signPsbt": {
+      "description": "Sign a PSBT v2 (base64-encoded) and return the partially or fully signed PSBT.",
+      "params": {
+        "psbtBase64": "cHNidP8BAFICAAAAA..."
+      },
+      "returns": {
+        "psbtBase64": "cHNidP8BAFICAAAAA...signed"
+      },
+      "example": {
+        "request": {
+          "method": "neurai_signPsbt",
+          "params": {
+            "psbtBase64": "cHNidP8BAFICAAAAA..."
+          }
+        },
+        "response": {
+          "result": {
+            "psbtBase64": "cHNidP8BAFICAAAAA...signed"
+          }
+        }
+      }
+    },
+
+    "neurai_finalizePsbt": {
+      "description": "Optionally finalize a PSBT and return the raw transaction hex.",
+      "params": {
+        "psbtBase64": "cHNidP8BAFICAAAAA...signed"
+      },
+      "returns": {
+        "hex": "0200000001abcdef..."
+      },
+      "example": {
+        "request": {
+          "method": "neurai_finalizePsbt",
+          "params": {
+            "psbtBase64": "cHNidP8BAFICAAAAA...signed"
+          }
+        },
+        "response": {
+          "result": {
+            "hex": "0200000001abcdef..."
+          }
+        }
+      }
+    },
+
+    "neurai_broadcastTransaction": {
+      "description": "Broadcast a raw hex transaction to the Neurai network.",
+      "params": {
+        "hex": "0200000001abcdef..."
+      },
+      "returns": {
+        "txid": "abcd1234..."
+      },
+      "example": {
+        "request": {
+          "method": "neurai_broadcastTransaction",
+          "params": {
+            "hex": "0200000001abcdef..."
+          }
+        },
+        "response": {
+          "result": {
+            "txid": "abcd1234..."
+          }
+        }
+      }
+    }
+  }
+}
