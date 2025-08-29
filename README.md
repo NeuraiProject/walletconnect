@@ -201,5 +201,32 @@ signClient.on("session_request", async (event) => {
 * [ ] (Optional) registered in WalletConnect chain registry
 
 ---
+
 ## 11. Websites related
+
+* **Neurai**
+
+  * Official repo: [https://github.com/NeuraiProject/neurai](https://github.com/NeuraiProject/neurai)
+  * Block explorer (mainnet): [https://neuraiexplorer.com](https://neuraiexplorer.com)
+  * Blockbook (mainnet): [https://blockbook.neurai.org](https://blockbook.neurai.org)
+  * RPC Neurai (mainnet): [https://rpc-main.neurai.org](https://rpc-main.neurai.org)
+  * Docs & resources: [https://neurai.org](https://neurai.org)
+
+* **WalletConnect**
+
+  * Official site: [https://walletconnect.com](https://walletconnect.com)
+  * Docs (v2): [https://docs.walletconnect.com](https://docs.walletconnect.com)
+  * Dashboard (to get your `projectId`): [https://cloud.walletconnect.com](https://cloud.walletconnect.com)
+  * Chain registry (submit new chains): [https://github.com/WalletConnect/chain-registry](https://github.com/WalletConnect/chain-registry)
+
+* **CAIP (Chain Agnostic Standards)**
+
+  * CAIP-2 (Chain ID spec): [https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md)
+  * CAIP-10 (Account ID spec): [https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-10.md](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-10.md)
+  * CAIP-25 (Optional namespaces): [https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-25.md](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-25.md)
+
+* **Bitcoin / PSBT references**
+
+  * BIP174 (Partially Signed Bitcoin Transactions): [https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki](https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki)
+  * BIP32 (HD Wallets): [https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki)
 
